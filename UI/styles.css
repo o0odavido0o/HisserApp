@@ -1,0 +1,203 @@
+body {
+	/* Violet*/
+	background-color: #39274F;
+}
+
+header{
+	position: fixed;
+	width: 100vw;
+	height: 2.5vw;
+	top: 0vw;
+	left: 0vw;
+	z-index: 1;
+	/* Green */
+	background: #87DA2A;
+}
+
+main{
+	margin: 0vw 0vw 2vw 0vw;
+}
+
+#logo{
+	position: fixed;
+	width: 2.5vw;
+	height: 2vw;
+	top: 0.25vw;
+	left: 27.5vw;
+	border-radius: 30px;
+}
+
+#userImg{
+	position: fixed;
+	width: 2.5vw;
+	height: 2vw;
+	top: 0.25vw;
+	left: 70vw;
+	border-radius: 30px;
+}
+
+#userName{
+	position: fixed;
+	top: 0.5vw;
+	left: 73vw;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.5vw;
+	line-height: 1.5vw;
+	/* Violet*/
+	color: #39274F;
+}
+
+button{
+	position: relative;
+	width: 40vw;
+	height: 2vw;
+	top: 4vw;
+	left: 29.5vw;
+	
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.5vw;
+	
+	/* Violet*/
+	color: #39274F;
+	/* Green */
+	background: #87DA2A;
+}
+
+.filters{
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+}
+
+.filters input{
+	position: relative;
+	top: 2vw;
+	left: 72.5vw;
+	width: 10vw;
+	height: 2vw;
+	margin-bottom: 0.25vw;
+	/* Green */
+	background: #87DA2A;
+	
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.5vw;
+	/* Violet*/
+	color: #39274F;
+}
+
+.post{
+	position: relative;
+	top: 4vw;
+	width: 40vw;
+	height: fit-content;
+	left: 29.5vw;
+	margin: 1vw 0vw;
+	/* Green */
+	background: #87DA2A;
+}
+
+#authorImg{
+	position: relative;
+	width: 3vw;
+	height: 3vw;
+	left: 1vw;
+	top: 1vw;
+}
+
+.author{
+	position: relative;
+	left: 1.5vw;
+	top: -0.7vw;
+	
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 1vw;
+	/* Violet*/
+	color: #39274F;
+}
+
+.datetime{
+	position: relative;
+	left: -7.7vw;
+	top: 0.3vw;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 1vw;
+	/* Violet*/
+	color: #39274F;
+}
+
+.post .content{
+	position: relative;
+	left: 1vw;
+	width: 38vw;
+	margin: 1.5vw 0vw 0vw 0vw;
+	
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1vw;
+	/* Violet*/
+	color: #39274F;
+}
+
+.post .hashTags{
+	position: relative;
+	left: 1vw;
+	width: 38vw;
+	height: 1vw;
+	margin: 1vw 0vw 1.5vw 0vw;
+	
+	font-family: Rosario;
+	font-style: italic;
+	font-weight: normal;
+	font-size: 1vw;
+	/* Violet*/
+	color: #39274F;
+}
+.post input{
+	position: relative;
+	top: 100%;
+	left: 1vw;
+	width: 1.5vw;
+	height: 1.5vw;
+	margin: 0vw 0vw 0.5vw 0vw;
+}
+
+#updateButton{
+	position: relative;
+	top: 100%;
+	left: 72.5vw;
+	width: 3vw;
+	height: 3vw;
+	border-radius: 30px;
+}
+
+footer{
+	position: relative;
+	left: 10vw;
+	width: 80vw;
+	height: 2vw;
+}
+
+span{
+	position: relative;
+	margin: 2.5vw;
+	
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.5vw;
+	/* Green */
+	color: #87DA2A;
+}

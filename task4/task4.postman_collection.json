@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "790c8a7a-49b9-4c8e-8fd8-98ca01af1d7b",
+		"name": "task4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Anime",
+			"item": [
+				{
+					"name": "Get1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ghibliapi.herokuapp.com/films/58611129-2dbc-4a81-a72f-77ddfc1b1b49",
+							"protocol": "https",
+							"host": [
+								"ghibliapi",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"films",
+								"58611129-2dbc-4a81-a72f-77ddfc1b1b49"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"title\": \"The Avengers\",\r\n\t\"description\": \"The Asgardian Loki encounters the Other, the leader of an extraterrestrial race known as the Chitauri. In exchange for retrieving the Tesseract,[N 2] a powerful energy source of unknown potential, the Other promises Loki an army with which he can subjugate Earth. Nick Fury, director of the espionage agency S.H.I.E.L.D., and his lieutenant Agent Maria Hill arrive at a remote research facility during an evacuation, where physicist Dr. Erik Selvig is leading a research team experimenting on the Tesseract. Agent Phil Coulson explains that the object has begun radiating an unusual form of energy. The Tesseract suddenly activates and opens a wormhole, allowing Loki to reach Earth. Loki takes the Tesseract and uses his scepter to enslave Selvig and a few other agents, including Clint Barton, to aid him in his getaway.\",\r\n\t\"director\": \"Joss Whedon\",\r\n\t\"producer\": \"Kevin Feige\",\r\n\t\"release_date\": \"2020\",\r\n\t\"rt_score\": \"79\",\r\n\t\"length\": 143\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ghibliapi.herokuapp.com/films",
+							"protocol": "https",
+							"host": [
+								"ghibliapi",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"films"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://ghibliapi.herokuapp.com/films/b3e06602-37ef-4c35-8a8f-84aaf23170d6",
+							"protocol": "https",
+							"host": [
+								"ghibliapi",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"films",
+								"b3e06602-37ef-4c35-8a8f-84aaf23170d6"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "MTG",
+			"item": [
+				{
+					"name": "Get1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.magicthegathering.io/v1/cards",
+							"protocol": "https",
+							"host": [
+								"api",
+								"magicthegathering",
+								"io"
+							],
+							"path": [
+								"v1",
+								"cards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.magicthegathering.io/v1/cards?name=Trace of Abundance",
+							"protocol": "https",
+							"host": [
+								"api",
+								"magicthegathering",
+								"io"
+							],
+							"path": [
+								"v1",
+								"cards"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Trace of Abundance"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.magicthegathering.io/v1/cards?name=Trace of Abundance&type=Enchantment — Aura",
+							"protocol": "https",
+							"host": [
+								"api",
+								"magicthegathering",
+								"io"
+							],
+							"path": [
+								"v1",
+								"cards"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Trace of Abundance"
+								},
+								{
+									"key": "type",
+									"value": "Enchantment — Aura"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Sport",
+			"item": [
+				{
+					"name": "Get1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://nflarrest.com/api/v1/crime",
+							"protocol": "http",
+							"host": [
+								"nflarrest",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"crime"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get2",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "NflArrest.com/api/v1/crime/topPlayers/Drugs",
+							"host": [
+								"NflArrest",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"crime",
+								"topPlayers",
+								"Drugs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get3",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "NflArrest.com/api/v1/player/topCrimes/Jerome Simpson",
+							"host": [
+								"NflArrest",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"player",
+								"topCrimes",
+								"Jerome Simpson"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

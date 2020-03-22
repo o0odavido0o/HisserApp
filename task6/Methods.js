@@ -2,10 +2,15 @@
 
 (function() {
 	
-	function getPosts(filters){
+	function getPosts(filters, start = 1, quantity = 10){
 		
-		let filteredPosts1 = posts;
+		let filteredPosts1 = [];
 		let filteredPosts2 = [];
+		
+		for(let i = start - 1; i < start + quantity - 1; i++){
+			
+			filteredPosts1.push(posts[i]);
+		}
 		
 		if(filters.author != undefined && filters.author.length != 0){
 		
@@ -190,13 +195,22 @@
 	
 	function removePost(id){
 		
+		let flag = 0;
+		
 		for(let i = 0; i < posts.length; i++){
 			
-			if(posts[i].id==id){
+			if(posts[i].id == id){
 				
-				let deltedId = posts[i].id;
-				delete posts[i];
-				break;
+				flag = 1;
+			}
+			
+			if(flag == 1){
+				
+				if(i != posts.length - 1){
+					posts[i]=posts[i+1];
+				}else{
+					posts.pop();
+				}
 			}
 		}
 		
@@ -264,8 +278,8 @@
 	console.log(" Проверка метода getPosts без фильтра:");
 	console.log(getPosts(0));
 	console.log(" Проверка метода getPosts с фильтром:");
-	console.log(getPosts(filters));
+	console.log(getPosts(filters, 12));
 	console.log(" Проверка метода removePost:");
-	removePost('21');
-	console.log(getPost('21'));
+	removePost('13');
+	console.log(posts);
 }());

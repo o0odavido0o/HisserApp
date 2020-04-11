@@ -1,6 +1,6 @@
-import java.io.*;
 import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 
 public class Filter implements javax.servlet.Filter
 {

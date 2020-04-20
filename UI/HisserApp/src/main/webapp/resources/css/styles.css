@@ -1,66 +1,82 @@
+html{
+	position: absolute;
+	min-width: 100%;
+	min-height: 100%;
+}
+
 body {
+	min-height: 100%;
+	margin: 0%;
 	/* Violet*/
 	background-color: #39274F;
 }
 
 header{
 	position: fixed;
-	width: 100vw;
-	height: 2.5vw;
-	top: 0vw;
-	left: 0vw;
+	top: 0vh;
+	min-width: 100%;
+	height: 5vh;
 	z-index: 1;
 	/* Green */
 	background: #87DA2A;
 }
 
-main{
-	margin: 0vw 0vw 2vw 0vw;
+#logo{
+	position: absolute;
+	top: 0.5vh;
+	left: 0.5vh;
+	width: 4.5vh;
+	height: 4vh;
+	border-radius: 30px;
 }
 
-#logo{
-	position: fixed;
-	width: 2.5vw;
-	height: 2vw;
-	top: 0.25vw;
-	left: 27.5vw;
-	border-radius: 30px;
+.user{
+	position: absolute;
+	width: auto;
+	height: 5vh;
+	right: 18vh; /*сделать выравнивание по правому краю*/
 }
 
 #userImg{
-	position: fixed;
-	width: 2.5vw;
-	height: 2vw;
-	top: 0.25vw;
-	left: 70vw;
+	position: relative;
+	top: 0.5vh;
+	width: 4.5vh;
+	height: 4vh;
 	border-radius: 30px;
+	margin: 0% 1vh 0% 0%;
 }
 
 #userName{
 	position: fixed;
-	top: 0.5vw;
-	left: 73vw;
-
-	font-family: Rosario;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 1.5vw;
-	line-height: 1.5vw;
-	/* Violet*/
-	color: #39274F;
-}
-
-button{
-	position: relative;
-	width: 40vw;
-	height: 2vw;
-	top: 4vw;
-	left: 29.5vw;
+	top: 1vh;
 	
 	font-family: Rosario;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 1.5vw;
+	font-size: 3vh;
+	/* Violet*/
+	color: #39274F;
+}
+
+main{
+	position: relative; /*сделать так, чтобы header и main соприкосались*/
+	width: auto;
+}
+
+button{
+	position: relative;
+	top: 7vh;
+	left: 30vw;
+	width: 40vw;
+	height: 4vh;
+	border: 0;
+    padding: 0;
+	margin: 0vh 0vw 2vh 0vw;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 3vh;
 	
 	/* Violet*/
 	color: #39274F;
@@ -70,78 +86,91 @@ button{
 
 .filters{
 	position: fixed;
+	left: 73vw;
+	top: 7vh;
+
 	display: flex;
 	flex-direction: column;
 }
 
 .filters input{
 	position: relative;
-	top: 2vw;
-	left: 72.5vw;
 	width: 10vw;
 	height: 2vw;
 	margin-bottom: 0.25vw;
+	border: 0;
+    padding: 0;
 	/* Green */
 	background: #87DA2A;
 	
 	font-family: Rosario;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 1.5vw;
+	font-size: 3vh;
 	/* Violet*/
 	color: #39274F;
 }
 
 .post{
 	position: relative;
-	top: 4vw;
+	top: 7vh;
+	left: 30vw;
 	width: 40vw;
-	height: fit-content;
-	left: 29.5vw;
-	margin: 1vw 0vw;
+	margin: 0vh 0vw 1vh 0vw;
 	/* Green */
 	background: #87DA2A;
 }
 
-#authorImg{
-	position: relative;
-	width: 3vw;
-	height: 3vw;
-	left: 1vw;
-	top: 1vw;
-}
-
 .author{
 	position: relative;
-	left: 1.5vw;
-	top: -0.7vw;
-	
+	width: 40vw;
+	height: 5vw;
+	display: inline-block;
+}
+
+.authorImg{
+	position: absolute;
+	width: 3vw;
+	height: 3vw;
+	margin: 1vw 0vw 1vw 1vw;
+}
+
+.authorInfo{
+	position: relative;
+	left: 5vw;
+	width: 32vw;
+	height: 3.75vw;
+}
+
+.authorName{
+	position: relative;
+	margin: 1.25vw 0vw 0vw 0vw;
+
 	font-family: Rosario;
 	font-style: normal;
 	font-weight: bold;
-	font-size: 1vw;
+	font-size: 2.25vh;
 	/* Violet*/
 	color: #39274F;
 }
 
 .datetime{
 	position: relative;
-	left: -7.7vw;
-	top: 0.3vw;
+	margin: 0vw 0vw 0vw 0vw;
+	float: bottom;
 
 	font-family: Rosario;
 	font-style: normal;
 	font-weight: bold;
-	font-size: 1vw;
+	font-size: 2.25vh;
 	/* Violet*/
 	color: #39274F;
 }
 
 .post .content{
 	position: relative;
-	left: 1vw;
 	width: 38vw;
-	margin: 1.5vw 0vw 0vw 0vw;
+	padding: 0vw 1vw 2vh 1vw;
 	
 	font-family: Rosario;
 	font-style: normal;
@@ -153,10 +182,8 @@ button{
 
 .post .hashTags{
 	position: relative;
-	left: 1vw;
 	width: 38vw;
-	height: 1vw;
-	margin: 1vw 0vw 1.5vw 0vw;
+	padding: 0vh 1vw 2vh 1vw;
 	
 	font-family: Rosario;
 	font-style: italic;
@@ -165,19 +192,36 @@ button{
 	/* Violet*/
 	color: #39274F;
 }
-.post input{
-	position: relative;
-	top: 100%;
-	left: 1vw;
-	width: 1.5vw;
-	height: 1.5vw;
-	margin: 0vw 0vw 0.5vw 0vw;
+
+/*Исправить положение лайка*/
+#likeImg{
+	position: absolute;
+	bottom: 1vh;
+	right: 0.5vw;
+	width: 1.25vw;
+	height: 1.25vw;
+	margin: 0vw 0vw 0vw 0vw;
+}
+
+#deleteImg{
+	position: absolute;
+	top: 0.5vw;
+	right: 0.5vw;
+	width: 1vw;
+	height: 1vw;
+}
+
+#editImg{
+	position: absolute;
+	top: 0.5vw;
+	right: 2vw;
+	width: 1vw;
+	height: 1vw;
 }
 
 #updateButton{
 	position: relative;
-	top: 100%;
-	left: 72.5vw;
+	left: 73vw;
 	width: 3vw;
 	height: 3vw;
 	border-radius: 30px;
@@ -185,19 +229,20 @@ button{
 
 footer{
 	position: relative;
-	left: 10vw;
-	width: 80vw;
-	height: 2vw;
+	min-width: 100%;
+	height: 5vh;
+	margin: 9vh 0% 0% 0%;
+	text-align: center;
 }
 
 span{
 	position: relative;
-	margin: 2.5vw;
-	
+	margin: 0vw 1vw;
+
 	font-family: Rosario;
 	font-style: normal;
 	font-weight: normal;
-	font-size: 1.5vw;
+	font-size: 3vh;
 	/* Green */
 	color: #87DA2A;
 }

@@ -102,10 +102,10 @@ class PostFilling {
 			post.hashTags = oldPost.hashTags;
 		}
 
-		post.id = this._postCollection[i].id;
-		post.createdAt = this._postCollection[i].createdAt;
-		post.author = this._postCollection[i].author;
-		post.likes = this._postCollection[i].likes;
+		post.id = oldPost.id;
+		post.createdAt = oldPost.createdAt;
+		post.author = oldPost.author;
+		post.likes = oldPost.likes;
 
 		if (!PostFilling.Validate(post)) {
 			return false;

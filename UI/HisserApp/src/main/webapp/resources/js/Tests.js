@@ -55,7 +55,7 @@ let user={
 let userView = new UserView(user);
 
 let postFeed = new PostForm(fillingOfPosts, userView);
-postFeed.ShowPostsFeed();
-postFeed.Add(addedPost);
-postFeed.Edit('21', editedPost);
-postFeed.Remove(2);
+postFeed.showPostsFeed();
+postFeed.add(addedPost);
+postFeed.edit('21', editedPost);
+postFeed.remove(2);

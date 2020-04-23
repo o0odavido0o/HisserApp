@@ -28,16 +28,14 @@ class PostForm {
 `;
     }
 
-    CreatePost(postFilling){
+    createPost(postFilling){
 
         let postForm = this._postForm.cloneNode(true);
 
         postForm.id = postFilling.id;
         postForm.getElementsByClassName("authorImg").item(0).src=postFilling.photoLink;
         postForm.getElementsByClassName("authorName").item(0).textContent=postFilling.author;
-        postForm.getElementsByClassName("datetime").item(0).textContent = postFilling.createdAt.getDate().toString() + "." + (postFilling.createdAt.getMonth()+1).toString() + "."
-            + postFilling.createdAt.getFullYear().toString() + " " + postFilling.createdAt.getHours().toString() + ":" + postFilling.createdAt.getMinutes().toString();
-
+        postForm.getElementsByClassName("datetime").item(0).textContent = postFilling.createdAt.toLocaleString();
         if(postFilling.description.length===0){
             postForm.removeChild(postForm.getElementsByClassName("content").item(0));
         }else{
@@ -53,19 +51,19 @@ class PostForm {
         return postForm;
     }
 
-    ShowPostsFeed(){
+    showPostsFeed(){
 
         let main = document.querySelector("main");
-        let postsToShow = this._postCollection.GetPage();
+        let postsToShow = this._postCollection.getPage();
         let postForm;
 
         for(let i = 0; i < 10; i++){
 
-            postForm = this.CreatePost(postsToShow[i]);
+            postForm = this.createPost(postsToShow[i]);
             if(this._userView !== undefined) {
-                if (this._userView.GetUser().name === postsToShow[i].author) {
-                    this._userView.ShowDeleteButton(postForm);
-                    this._userView.ShowEditButton(postForm);
+                if (this._userView.getUser().name === postsToShow[i].author) {
+                    this._userView.showDeleteButton(postForm);
+                    this._userView.showEditButton(postForm);
                 }
             }
 
@@ -73,18 +71,18 @@ class PostForm {
         }
     }
 
-    Add(postFilling) {
+    add(postFilling) {
 
-        if (!this._postCollection.Add(postFilling)) {
+        if (!this._postCollection.add(postFilling)) {
             return false;
         }
 
         let main = document.querySelector("main");
 
-        let postForm = this.CreatePost(postFilling);
+        let postForm = this.createPost(postFilling);
         if(this._userView !== undefined) {
-            this._userView.ShowDeleteButton(postForm);
-            this._userView.ShowEditButton(postForm);
+            this._userView.showDeleteButton(postForm);
+            this._userView.showEditButton(postForm);
         }
 
         main.insertBefore(postForm, document.getElementsByClassName("post").item(0));
@@ -92,9 +90,9 @@ class PostForm {
         return true;
     }
 
-    Remove(id) {
+    remove(id) {
 
-        if (!this._postCollection.Remove(id)) {
+        if (!this._postCollection.remove(id)) {
             return false;
         }
 
@@ -104,9 +102,9 @@ class PostForm {
         return true;
     }
 
-    Edit(id, postFilling) {
+    edit(id, postFilling) {
 
-        if (!this._postCollection.Edit(id, postFilling)) {
+        if (!this._postCollection.edit(id, postFilling)) {
             return false;
         }
 

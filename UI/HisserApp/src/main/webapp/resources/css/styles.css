@@ -6,14 +6,14 @@ html{
 
 body {
 	min-height: 100%;
-	margin: 0%;
+	margin: 0;
 	/* Violet*/
 	background-color: #39274F;
 }
 
 header{
 	position: fixed;
-	top: 0vh;
+	top: 0;
 	min-width: 100%;
 	height: 5vh;
 	z-index: 1;
@@ -43,7 +43,7 @@ header{
 	width: 4.5vh;
 	height: 4vh;
 	border-radius: 30px;
-	margin: 0% 1vh 0% 0%;
+	margin: 0 1vh 0 0;
 }
 
 #userName{
@@ -71,7 +71,7 @@ button{
 	height: 4vh;
 	border: 0;
   padding: 0;
-	margin: 0vh 0vw 2vh 0vw;
+	margin: 0 0 2vh 0;
 
 	font-family: Rosario;
 	font-style: normal;
@@ -116,7 +116,7 @@ button{
 	top: 7vh;
 	left: 30vw;
 	width: 40vw;
-	margin: 0vh 0vw 1vh 0vw;
+	margin: 0 0 1vh 0;
 
 	/* Green */
 	background: #87DA2A;
@@ -133,7 +133,7 @@ button{
 	position: absolute;
 	width: 3vw;
 	height: 3vw;
-	margin: 1vw 0vw 1vw 1vw;
+	margin: 1vw 0 1vw 1vw;
 }
 
 .authorInfo{
@@ -145,7 +145,7 @@ button{
 
 .authorName{
 	position: relative;
-	margin: 1.25vw 0vw 0vw 0vw;
+	margin: 1.25vw 0 0 0;
 
 	font-family: Rosario;
 	font-style: normal;
@@ -157,7 +157,7 @@ button{
 
 .datetime{
 	position: relative;
-	margin: 0vw 0vw 0vw 0vw;
+	margin: 0 0 0 0;
 	float: bottom;
 
 	font-family: Rosario;
@@ -171,7 +171,7 @@ button{
 .post .content{
 	position: relative;
 	width: 38vw;
-	padding: 0vw 1vw 2vh 1vw;
+	padding: 0 1vw 2vh 1vw;
 	
 	font-family: Rosario;
 	font-style: normal;
@@ -184,7 +184,7 @@ button{
 .post .hashTags{
 	position: relative;
 	width: 38vw;
-	padding: 0vh 1vw 2vh 1vw;
+	padding: 0 1vw 2vh 1vw;
 	
 	font-family: Rosario;
 	font-style: italic;
@@ -195,13 +195,13 @@ button{
 }
 
 /*Исправить положение лайка*/
-#likeImg{
+#likeImg {
 	position: absolute;
 	bottom: 1vh;
 	right: 0.5vw;
 	width: 1.25vw;
 	height: 1.25vw;
-	margin: 0vw 0vw 0vw 0vw;
+	margin: 0 0 0 0;
 }
 
 #deleteImg{
@@ -232,13 +232,13 @@ footer{
 	position: relative;
 	min-width: 100%;
 	height: 5vh;
-	margin: 9vh 0% 0% 0%;
+	margin: 9vh 0 0 0;
 	text-align: center;
 }
 
 span{
 	position: relative;
-	margin: 0vw 1vw;
+	margin: 0 1vw;
 
 	font-family: Rosario;
 	font-style: normal;

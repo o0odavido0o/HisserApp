@@ -8,12 +8,12 @@ class PostFilling {
 		this._postCollection = postCollection;
 	}
 
-	AddAll(postCollection) {
+	addAll(postCollection) {
 
 		let trashCollection = [];
 
 		postCollection.forEach(function(item, i, arr) {
-			if (PostFilling.Validate(item)){
+			if (PostFilling.validate(item)){
 				this._postCollection.push(item);
 			} else {
 				trashCollection.push(item);
@@ -23,7 +23,7 @@ class PostFilling {
 		return trashCollection;
 	}
 
-	GetPage(skip = 0, quantity = 10, filters) {
+	getPage(skip = 0, quantity = 10, filters) {
 
 		if (skip === undefined || quantity === undefined) {
 			return undefined;
@@ -31,22 +31,22 @@ class PostFilling {
 
 		let filteredPosts1 = this._postCollection;
 
-		if (filters !== undefined && filters.author !== undefined && filters.author.length !== 0) {
+		if (filters && filters.author && filters.author.length) {
 			filteredPosts1 = filteredPosts1.filter(post => post.author == filters.author);
 		}
-		if (filters !== undefined && filters.createdAt !== undefined) {
+		if (filters && filters.createdAt) {
 			filteredPosts1 = filteredPosts1.filter(post => post.createdAt == filters.createdAt);
 		}
-		if (filters !== undefined && filters.hashTags !== undefined && filters.hashTags.length !== 0) {
-			filteredPosts1 = filteredPosts1.filter(post => this.Contains(post.hashTags, filters.hashTags));
+		if (filters && filters.hashTags && filters.hashTags.length) {
+			filteredPosts1 = filteredPosts1.filter(post => this.contains(post.hashTags, filters.hashTags));
 		}
 
 		filteredPosts1=this._postCollection.slice(skip, skip + quantity);
 
-		return filteredPosts1.sort(this.CompareData);
+		return filteredPosts1.sort(this.compareDate);
 	}
 
-	Contains(container, element) {
+	contains(container, element) {
 
 		if (!element.length) {
 			return true;
@@ -56,28 +56,20 @@ class PostFilling {
 			return false;
 		}
 
-		for (let i = 0; i < element.length; i++) {
-
-			if (!container.includes(element[i])) {
-
-				return false;
-			}
-		}
-
-		return true;
+		return element.every(elem => container.includes(elem));
 	}
 
-	CompareData(post1, post2) {
+	compareDate(post1, post2) {
 		return post1.createdAt - post2.createdAt;
 	}
 
-	Get(id) {
+	get(id) {
 		return this._postCollection.find(post => post.id === id);
 	}
 
-	Add(post) {
+	add(post) {
 
-		if (!PostFilling.Validate(post)) {
+		if (!PostFilling.validate(post)) {
 			return false;
 		}
 
@@ -86,7 +78,7 @@ class PostFilling {
 		return true;
 	}
 
-	Edit(id, post) {
+	edit(id, post) {
 
 		let oldPost = this._postCollection.find(post => post.id === id);
 
@@ -107,7 +99,7 @@ class PostFilling {
 		post.author = oldPost.author;
 		post.likes = oldPost.likes;
 
-		if (!PostFilling.Validate(post)) {
+		if (!PostFilling.validate(post)) {
 			return false;
 		}
 
@@ -118,22 +110,22 @@ class PostFilling {
 		return true;
 	}
 
-	Remove(id) {
+	remove(id) {
 		this._postCollection = this._postCollection.filter(post => post.id !== id);
 		return true;
 	}
 
-	Clear() {
+	clear() {
 		this._postCollection = [];
 	}
 
-	static Validate(post) {
+	static validate(post) {
 
 		if (!post.id) {
 			return false;
 		}
 
-		if (post.description.length >= 200 || !post.description) {
+		if (!post.description || post.description.length >= 200) {
 			return false;
 		}
 

@@ -7,25 +7,25 @@ class UserView {
     constructor(user) {
 
         this._user = user;
-        this.ShowUser(user);
-        this.ShowCreateButton();
+        this.showUser(user);
+        this.showCreateButton();
 
         let postsFromSite1=document.getElementsByClassName("post");
 
         for(let i=0;i<postsFromSite1.length;i++) {
 
             if (name === postsFromSite1.item(i).getElementsByClassName("authorName").item(0).textContent) {
-                this.ShowDeleteButton(postsFromSite1.item(i));
-                this.ShowEditButton(postsFromSite1.item(i));
+                this.showDeleteButton(postsFromSite1.item(i));
+                this.showEditButton(postsFromSite1.item(i));
             }
         }
     }
 
-    GetUser(){
+    getUser(){
         return this._user;
     }
 
-    ShowUser(user){
+    showUser(user){
 
         let newUser = document.createElement("div");
         newUser.classList.add("user");
@@ -40,7 +40,7 @@ class UserView {
         return true;
     }
 
-    ShowCreateButton(){
+    showCreateButton(){
 
         let CreateButton = document.createElement("button");
         CreateButton.id="createButton";
@@ -51,7 +51,7 @@ class UserView {
         return true;
     }
 
-    ShowDeleteButton(post){
+    showDeleteButton(post){
 
         let DeleteButton = document.createElement("input");
         DeleteButton.id="deleteImg";
@@ -63,7 +63,7 @@ class UserView {
         return true;
     }
 
-    ShowEditButton(post){
+    showEditButton(post){
 
         let EditButton = document.createElement("input");
         EditButton.id="editImg";

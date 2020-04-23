@@ -151,4 +151,36 @@ class PostFilling {
 
 		return true;
 	}
+
+	addLike(id, userName){
+
+		let post = this.get(id);
+		if(!post){
+			return false;
+		}
+
+		if(post.likes.indexOf(userName) === -1) {
+			post.likes.push(userName);
+		}else{
+			return false;
+		}
+
+		return true;
+	}
+
+	removeLike(id, userName){
+
+		let post = this.get(id);
+		if(!post){
+			return false;
+		}
+
+		if(post.likes.indexOf(userName) !== -1) {
+			post.likes.splice(post.likes.indexOf(userName), 1);
+		}else{
+			return false;
+		}
+
+		return true;
+	}
 }

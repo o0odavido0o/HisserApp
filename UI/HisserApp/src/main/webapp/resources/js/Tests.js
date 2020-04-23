@@ -52,10 +52,13 @@ let user={
 
 };
 
-let userView = new UserView(user);
+let userView = new UserView(user, fillingOfPosts);
 
 let postFeed = new PostForm(fillingOfPosts, userView);
 postFeed.showPostsFeed();
 postFeed.add(addedPost);
 postFeed.edit('21', editedPost);
 postFeed.remove(2);
+userView.addLike('21', postFeed.get('21'));
+userView.removeLike('6', postFeed.get('6'));
+//userView.addLike('6', postFeed.get('6'));

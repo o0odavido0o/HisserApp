@@ -3,10 +3,13 @@
 class UserView {
 
     _user;
+    _postCollection;
 
-    constructor(user) {
+    constructor(user, postCollection) {
 
         this._user = user;
+        this._postCollection = new PostFilling(postCollection);
+
         this.showUser(user);
         this.showCreateButton();
 
@@ -17,6 +20,10 @@ class UserView {
             if (name === postsFromSite1.item(i).getElementsByClassName("authorName").item(0).textContent) {
                 this.showDeleteButton(postsFromSite1.item(i));
                 this.showEditButton(postsFromSite1.item(i));
+            }
+
+            if(this._postCollection.get(postsFromSite1.item(i).id).likes.indexOf(name)!==-1){
+                this.addLike(postsFromSite1.item(i).id, postsFromSite1.item(i));
             }
         }
     }
@@ -71,6 +78,36 @@ class UserView {
         EditButton.src="resources/Images/Forms/Edit.jpg";
         EditButton.alt="Edit";
         post.appendChild(EditButton);
+
+        return true;
+    }
+
+    addLike(id, post){
+
+        if(!post){
+            return false;
+        }
+
+        if (!this._postCollection.addLike(id, this._user.name)) {
+            return false;
+        }
+
+        post.getElementsByTagName("input").item(0).src="resources/Images/Forms/Like.png";
+
+        return true;
+    }
+
+    removeLike(id, post){
+
+        if(!post){
+            return false;
+        }
+
+        if (!this._postCollection.removeLike(id, this._user.name)) {
+            return false;
+        }
+
+        post.getElementsByTagName("input").item(0).src="resources/Images/Forms/UnLike.png";
 
         return true;
     }

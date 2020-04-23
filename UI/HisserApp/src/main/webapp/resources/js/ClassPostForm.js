@@ -24,7 +24,7 @@ class PostForm {
     </div>
     <div class="content">New day. New darkspawns.</div>
     <div class="hashTags">#darkspawns</div>
-    <input id="likeImg" type="image" src="resources/Images/Forms/Like.png" alt="Like">
+    <input id="likeImg" type="image" src="resources/Images/Forms/UnLike.png" alt="Like">
 `;
     }
 
@@ -64,6 +64,10 @@ class PostForm {
                 if (this._userView.getUser().name === postsToShow[i].author) {
                     this._userView.showDeleteButton(postForm);
                     this._userView.showEditButton(postForm);
+                }
+
+                if(postsToShow[i].likes.indexOf(this._userView.getUser().name)!==-1){
+                    postForm.getElementsByTagName("input").item(0).src="resources/Images/Forms/Like.png";
                 }
             }
 
@@ -114,5 +118,9 @@ class PostForm {
         postForm.getElementsByClassName("hashTags").item(0).textContent=postFilling.hashTags.join('');
 
         return true;
+    }
+
+    get(id) {
+        return document.getElementById(id);
     }
 }

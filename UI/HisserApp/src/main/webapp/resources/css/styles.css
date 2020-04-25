@@ -61,6 +61,7 @@ header{
 main{
 	position: relative; /*сделать так, чтобы header и main соприкосались*/
 	width: auto;
+	opacity: 0.5;
 }
 
 button{
@@ -246,4 +247,108 @@ span{
 	font-size: 3vh;
 	/* Green */
 	color: #87DA2A;
+}
+
+.authorizationWindow{
+	position: fixed;
+	top: 12.5vh;
+	left: 12.5vw;
+	height: 75vh;
+	width: 75vw;
+	z-index: 3;
+	border: 1vw solid #F2E34E;
+	/* Violet*/
+	background: #39274F;
+}
+
+.authorizationWindow h1{
+	position: absolute;
+	top: 5vh;
+	left: 32.5vw;
+	margin: 0;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 3vw;
+	/* Green */
+	color: #87DA2A;
+}
+
+.authorizationWindow #login{
+	position: absolute;
+	top: 20vh;
+	left: 27.5vw;
+	height: 5vh;
+	width: 20vw;
+	z-index: 1;
+	text-align: center;
+	border: 0;
+	/* Green */
+	background: #87DA2A;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 4vh;
+	/* Violet*/
+	color: #39274F;
+}
+
+.authorizationWindow #password{
+	position: absolute;
+	top: 27vh;
+	left: 27.5vw;
+	height: 5vh;
+	width: 20vw;
+	z-index: 1;
+	text-align: center;
+	border: 0;
+	/* Green */
+	background: #87DA2A;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 4vh;
+	/* Violet*/
+	color: #39274F;
+}
+
+.authorizationWindow #signUpButton{
+	position: absolute;
+	top: 50vh;
+	left: 27.5vw;
+	height: 5vh;
+	width: 20vw;
+	z-index: 1;
+	text-align: center;
+	border: 0;
+	/* Green */
+	background: #87DA2A;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 4vh;
+	/* Violet*/
+	color: #39274F;
+}
+
+#X{
+	position: absolute;
+	top: 1.5vh;
+	right: 1vw;
+	//top: -7vh;
+	//right: -5vw;
+	height: 4vh;
+	width: 2vw;
+}
+
+#loginBackImg{
+	position: absolute;
+	top: 20vh;
+	left: 25vw;
+	height: 40vh;
+	width: 25vw;
 }

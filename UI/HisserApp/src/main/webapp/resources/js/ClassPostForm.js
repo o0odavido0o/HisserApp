@@ -25,6 +25,8 @@ class PostForm {
     <div class="content">New day. New darkspawns.</div>
     <div class="hashTags">#darkspawns</div>
     <input id="likeImg" type="image" src="resources/Images/Forms/UnLike.png" alt="Like">
+    <input id="deleteImg" type="image" src="resources/Images/Forms/Delete.jpg" alt="Delete">
+    <input id="editImg" type="image" src="resources/Images/Forms/Edit.jpg" alt="Edit">
 `;
     }
 
@@ -47,6 +49,9 @@ class PostForm {
         }else{
             postForm.getElementsByClassName("hashTags").item(0).textContent=postFilling.hashTags.join('');
         }
+
+        postForm.getElementsByTagName("input").item(1).style.visibility="hidden";
+        postForm.getElementsByTagName("input").item(2).style.visibility="hidden";
 
         return postForm;
     }

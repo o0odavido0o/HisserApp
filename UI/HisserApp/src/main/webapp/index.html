@@ -18,6 +18,7 @@
 			<img id="userImg" src="resources/Images/PostFilling/GreyWarden.jpg" alt="userImg">
 			<p1 id="userName"></p1>
 		</div>
+		<input id="exitHeaderButton" type="image" src="resources/Images/Forms/Exit.jpg" alt="Exit">
 		<button id="signUpHeaderButton" type="button">Sign Up</button>
 	</header>
 
@@ -30,16 +31,28 @@
 		<img id="signUpBackImg" src="resources/Images/Forms/Icon.jpg" alt="loginBackImg">
 	</div>
 
+	<div id="creationPostWindow">
+		<div id="creator">
+			<img id="creatorImg" src="resources/Images/PostFilling/GreyWarden.jpg" alt="creatorImg">
+			<span></span>
+		</div>
+		<textarea id="creationContent">Text</textarea>
+		<textarea id="creationTags">#Tags</textarea>
+		<button id="publishButton" type="button">Publish</button>
+		<button id="editButton" type="button">Edit</button>
+		<input id="closeCreationButton" type="image" src="resources/Images/Forms/X.png" alt="Close">
+	</div>
+
 	<main>
 
 		<button id="createButton" type="button">Create</button>
 
-		<div class="filters">
+		<form class="filters" id="filters">
 			<input type="text" value="Name">
 			<input type="text" value="DD.MM.YY">
 			<input type="text" value="#Tags">
-		</div>
-            
+		</form>
+
 		<input id="updateButton" type="image" src="resources/Images/Forms/Update.jpg" alt="Update">
 
 	</main>
@@ -53,12 +66,15 @@
 		<span>23.02.2020</span>
 	</footer>
 
-	<script src="resources/js/Data.js"></script>
-	<script src="resources/js/ClassPostFilling.js"></script>
-	<script src="resources/js/ClassPostForm.js"></script>
+	<script src="resources/js/ClassCreationWindowController.js"></script>
+	<script src="resources/js/ClassCreationWindowView.js"></script>
 	<script src="resources/js/ClassPostSectionController.js"></script>
+	<script src="resources/js/ClassPostSectionView.js"></script>
+	<script src="resources/js/ClassPostsFilling.js"></script>
+	<script src="resources/js/ClassPostsForm.js"></script>
 	<script src="resources/js/ClassSignUpWindowController.js"></script>
-	<script src="resources/js/ClassUserView.js"></script>
+	<script src="resources/js/ClassSignUpWindowView.js"></script>
+	<script src="resources/js/Data.js"></script>
 	<script src="resources/js/Tests.js"></script>
   
 </body>

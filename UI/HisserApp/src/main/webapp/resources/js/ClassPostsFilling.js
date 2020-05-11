@@ -1,11 +1,12 @@
 "use strict";
 
-class PostFilling {
+class PostsFilling {
 
-	_postCollection = [];
+	_postCollection;
 
-	constructor(postCollection= []) {
-		this._postCollection = postCollection;
+	constructor() {
+		this._postCollection = JSON.parse(localStorage.getItem("postFilling"));
+		this._postCollection.forEach(post => post.createdAt = new Date(post.createdAt));
 	}
 
 	addAll(postCollection) {
@@ -13,12 +14,14 @@ class PostFilling {
 		let trashCollection = [];
 
 		postCollection.forEach(function(item, i, arr) {
-			if (PostFilling.validate(item)){
+			if (PostsFilling.validate(item)){
 				this._postCollection.push(item);
 			} else {
 				trashCollection.push(item);
 			}
 		});
+
+		localStorage.setItem("postFilling", JSON.stringify(this._postCollection));
 
 		return trashCollection;
 	}
@@ -34,16 +37,18 @@ class PostFilling {
 		if (filters && filters.author && filters.author.length) {
 			filteredPosts1 = filteredPosts1.filter(post => post.author == filters.author);
 		}
-		if (filters && filters.createdAt) {
-			filteredPosts1 = filteredPosts1.filter(post => post.createdAt == filters.createdAt);
+		if (filters && filters.createdAt && filters.createdAt.length) {
+			filteredPosts1 = filteredPosts1.filter(post => post.createdAt.getDate() == filters.createdAt[0]);
+			filteredPosts1 = filteredPosts1.filter(post => post.createdAt.getMonth() + 1 == filters.createdAt[1]);
+			filteredPosts1 = filteredPosts1.filter(post => post.createdAt.getFullYear() == filters.createdAt[2]);
 		}
 		if (filters && filters.hashTags && filters.hashTags.length) {
 			filteredPosts1 = filteredPosts1.filter(post => this.contains(post.hashTags, filters.hashTags));
 		}
 
-		filteredPosts1=this._postCollection.slice(skip, skip + quantity);
+		filteredPosts1.sort(this.compareDate);
 
-		return filteredPosts1.sort(this.compareDate);
+		return filteredPosts1.slice(skip, skip + quantity);
 	}
 
 	contains(container, element) {
@@ -60,7 +65,7 @@ class PostFilling {
 	}
 
 	compareDate(post1, post2) {
-		return post1.createdAt - post2.createdAt;
+		return post2.createdAt - post1.createdAt;
 	}
 
 	get(id) {
@@ -69,11 +74,13 @@ class PostFilling {
 
 	add(post) {
 
-		if (!PostFilling.validate(post)) {
+		if (!PostsFilling.validate(post)) {
 			return false;
 		}
 
 		this._postCollection.push(post);
+
+		localStorage.setItem("postFilling", JSON.stringify(this._postCollection));
 
 		return true;
 	}
@@ -99,7 +106,7 @@ class PostFilling {
 		post.author = oldPost.author;
 		post.likes = oldPost.likes;
 
-		if (!PostFilling.validate(post)) {
+		if (!PostsFilling.validate(post)) {
 			return false;
 		}
 
@@ -107,16 +114,22 @@ class PostFilling {
 		oldPost.photoLink = post.photoLink;
 		oldPost.hashTags = post.hashTags;
 
+		localStorage.setItem("postFilling", JSON.stringify(this._postCollection));
+
 		return true;
 	}
 
 	remove(id) {
 		this._postCollection = this._postCollection.filter(post => post.id !== id);
+
+		localStorage.setItem("postFilling", JSON.stringify(this._postCollection));
+
 		return true;
 	}
 
 	clear() {
 		this._postCollection = [];
+		localStorage.setItem("postFilling", JSON.stringify(this._postCollection));
 	}
 
 	static validate(post) {
@@ -165,6 +178,8 @@ class PostFilling {
 			return false;
 		}
 
+		localStorage.setItem("postFilling", JSON.stringify(this._postCollection));
+
 		return true;
 	}
 
@@ -180,6 +195,8 @@ class PostFilling {
 		}else{
 			return false;
 		}
+
+		localStorage.setItem("postFilling", JSON.stringify(this._postCollection));
 
 		return true;
 	}

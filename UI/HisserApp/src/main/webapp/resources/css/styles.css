@@ -7,17 +7,16 @@ html{
 body {
 	min-height: 100%;
 	margin: 0;
-	/* Violet*/
 	background-color: #39274F;
 }
 
+													/*Header*/
 header{
 	position: fixed;
 	top: 0;
 	min-width: 100%;
 	height: 5vh;
 	z-index: 1;
-	/* Green */
 	background: #87DA2A;
 }
 
@@ -34,7 +33,9 @@ header{
 	position: absolute;
 	width: auto;
 	height: 5vh;
-	right: 18vh; /*сделать выравнивание по правому краю*/
+	right: 10.5vw; /*сделать выравнивание по правому краю*/
+
+	visibility: hidden;
 }
 
 #userImg{
@@ -54,23 +55,60 @@ header{
 	font-style: normal;
 	font-weight: normal;
 	font-size: 3vh;
-	/* Violet*/
 	color: #39274F;
 }
 
+#exitHeaderButton{
+	position: absolute;
+	top: 0.5vh;
+	right: 0.5vh;
+	width: 4vh;
+	height: 4vh;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 3vh;
+
+	color: #87DA2A;
+	background: #39274F;
+
+	visibility: hidden;
+}
+
+#signUpHeaderButton{
+	position: absolute;
+	top: 0.5vh;
+	right: 0.5vh;
+	height: 4vh;
+	border: 0;
+	border-radius: 30px;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 3vh;
+
+	color: #87DA2A;
+	background: #39274F;
+
+	visibility: hidden;
+}
+
+													/*Main*/
 main{
 	position: relative; /*сделать так, чтобы header и main соприкосались*/
 	width: auto;
 }
 
-button{
-	position: relative;
+													/*CreateButton*/
+#createButton{
+	position: absolute;
 	top: 7vh;
 	left: 30vw;
 	width: 40vw;
 	height: 4vh;
 	border: 0;
-  padding: 0;
 	margin: 0 0 2vh 0;
 
 	font-family: Rosario;
@@ -82,12 +120,16 @@ button{
 	color: #39274F;
 	/* Green */
 	background: #87DA2A;
+
+	visibility: hidden;
 }
 
+													/*Filters*/
 .filters{
 	position: fixed;
-	left: 73vw;
 	top: 7vh;
+	left: 73vw;
+	z-index: 1;
 
 	display: flex;
 	flex-direction: column;
@@ -96,10 +138,9 @@ button{
 .filters input{
 	position: relative;
 	width: 10vw;
-	height: 2vw;
-	margin-bottom: 0.25vw;
+	height: 4vh;
+	margin-bottom: 0.5vh;
 	border: 0;
-    padding: 0;
 	/* Green */
 	background: #87DA2A;
 	
@@ -111,6 +152,7 @@ button{
 	color: #39274F;
 }
 
+												/*Post*/
 .post{
 	position: relative;
 	top: 7vh;
@@ -195,7 +237,7 @@ button{
 }
 
 /*Исправить положение лайка*/
-#likeImg {
+.post .likeImg {
 	position: absolute;
 	bottom: 1vh;
 	right: 0.5vw;
@@ -204,22 +246,27 @@ button{
 	margin: 0 0 0 0;
 }
 
-#deleteImg{
+.deleteImg{
 	position: absolute;
 	top: 0.5vw;
 	right: 0.5vw;
 	width: 1vw;
 	height: 1vw;
+
+	visibility: hidden;
 }
 
-#editImg{
+.editImg{
 	position: absolute;
 	top: 0.5vw;
 	right: 2vw;
 	width: 1vw;
 	height: 1vw;
+
+	visibility: hidden;
 }
 
+/*сделать так чтобы фильтр и кнопка не пересекались*/
 #updateButton{
 	position: relative;
 	left: 73vw;
@@ -228,6 +275,8 @@ button{
 	border-radius: 30px;
 }
 
+												/*Footer*/
+/*сделать так чтобы фильтр и футер не пересекались*/
 footer{
 	position: relative;
 	min-width: 100%;
@@ -246,4 +295,231 @@ span{
 	font-size: 3vh;
 	/* Green */
 	color: #87DA2A;
+}
+
+													/*Sign Up Window*/
+.signUpWindow{
+	position: fixed;
+	top: 12.5vh;
+	left: 12.5vw;
+	height: 75vh;
+	width: 75vw;
+	z-index: 3;
+	border: 1vw solid #F2E34E;
+	/* Violet*/
+	background: #39274F;
+
+	visibility: hidden;
+}
+
+.signUpWindow h1{
+	position: absolute;
+	top: 5vh;
+	left: 32.5vw;
+	margin: 0;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 3vw;
+	/* Green */
+	color: #87DA2A;
+}
+
+.signUpWindow #signUpLogin{
+	position: absolute;
+	top: 20vh;
+	left: 27.5vw;
+	height: 5vh;
+	width: 20vw;
+	z-index: 1;
+	text-align: center;
+	border: 0;
+	/* Green */
+	background: #87DA2A;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 4vh;
+	/* Violet*/
+	color: #39274F;
+}
+
+.signUpWindow #signUpPassword{
+	position: absolute;
+	top: 27vh;
+	left: 27.5vw;
+	height: 5vh;
+	width: 20vw;
+	z-index: 1;
+	text-align: center;
+	border: 0;
+	/* Green */
+	background: #87DA2A;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 4vh;
+	/* Violet*/
+	color: #39274F;
+}
+
+.signUpWindow #signUpWindowButton{
+	position: absolute;
+	top: 50vh;
+	left: 27.5vw;
+	height: 5vh;
+	width: 20vw;
+	z-index: 1;
+	text-align: center;
+	border: 0;
+	/* Green */
+	background: #87DA2A;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 4vh;
+	/* Violet*/
+	color: #39274F;
+}
+
+#closeSignUpButton{
+	position: absolute;
+	top: 1.5vh;
+	right: 1vw;
+	height: 4vh;
+	width: 2vw;
+}
+
+#signUpBackImg{
+	position: absolute;
+	top: 20vh;
+	left: 25vw;
+	height: 40vh;
+	width: 25vw;
+}
+
+													/*Post Creation Window*/
+#creationPostWindow{
+	position: fixed;
+	top: 12.5vh;
+	left: 12.5vw;
+	height: 75vh;
+	width: 75vw;
+	border: 0.5vh solid #F2E34E;
+	z-index: 3;
+	background: #39274F;
+
+	visibility: hidden;
+}
+
+#creator{
+	position: relative;
+	width: 75vw;
+	height: 10vh;
+}
+
+#creatorImg{
+	position: relative;
+	width: 8vh;
+	height: 8vh;
+	margin: 1vh 0 0 1vh;
+}
+
+#creationPostWindow span{
+	position: relative;
+	bottom: 2.5vh;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 4vh;
+	color: #87DA2A;
+}
+
+#creationContent{
+	position: absolute;
+	top: 10vh;
+	left: 0.5vw;
+	height: 39vh;
+	width: 74vw;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	background: #87DA2A;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 4vh;
+	color: #39274F;
+}
+
+#creationTags{
+	position: absolute;
+	bottom: 10vh;
+	left: 0.5vw;
+	height: 15vh;
+	width: 74vw;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	background: #87DA2A;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 4vh;
+	color: #39274F;
+}
+
+#publishButton{
+	position: absolute;
+	bottom: 2vh;
+	left: 27.5vw;
+	height: 6vh;
+	width: 20vw;
+	border: 0;
+	border-radius: 30px;
+	text-align: center;
+	background: #87DA2A;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 4vh;
+	color: #39274F;
+
+	visibility: hidden;
+}
+
+#editButton{
+	position: absolute;
+	bottom: 2vh;
+	left: 27.5vw;
+	height: 6vh;
+	width: 20vw;
+	border: 0;
+	border-radius: 30px;
+	text-align: center;
+	background: #87DA2A;
+
+	font-family: Rosario;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 4vh;
+	color: #39274F;
+
+	visibility: hidden;
+}
+
+#closeCreationButton{
+	position: absolute;
+	top: 1vh;
+	right: 1vh;
+	height: 4vh;
+	width: 2vw;
 }

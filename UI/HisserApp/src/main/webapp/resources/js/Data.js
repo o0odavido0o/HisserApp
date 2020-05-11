@@ -1,6 +1,6 @@
 "use strict";
-  
-let fillingOfPosts = [];
+
+let postFilling = [];
 
 let hashTag = ["#Normandy"];
 let like = ["Government"];
@@ -22,7 +22,7 @@ let post = {
 
 };
 
-fillingOfPosts.push(post);
+postFilling.push(post);
 
 hashTag = ["#Corporations", "#Cold"];
 like = ["David Shepard"];
@@ -45,7 +45,7 @@ post = {
 
 };
 
-fillingOfPosts.push(post);
+postFilling.push(post);
 
 hashTag = [];
 like = [];
@@ -68,7 +68,7 @@ post = {
 
 };
 
-fillingOfPosts.push(post);
+postFilling.push(post);
 
 hashTag = ["#Thoughts"];
 like = ["David Shepard"];
@@ -90,7 +90,7 @@ post = {
 
 };
 
-fillingOfPosts.push(post);
+postFilling.push(post);
 
 hashTag = ["#Thoughts"];
 like = [];
@@ -112,7 +112,7 @@ post = {
 
 };
 
-fillingOfPosts.push(post);
+postFilling.push(post);
 
 hashTag = ["#World", "#Hero"];
 like = ["Grey Warden", "Leliana", "Wynne", "Alistair"];
@@ -134,7 +134,7 @@ post = {
 
 };
 
-fillingOfPosts.push(post);
+postFilling.push(post);
 
 hashTag = ["#Despair"];
 like = [];
@@ -156,7 +156,7 @@ post = {
 
 };
 
-fillingOfPosts.push(post);
+postFilling.push(post);
 
 hashTag = ["#Humans", "#Weakness"];
 like = [];
@@ -178,7 +178,7 @@ post = {
 
 };
 
-fillingOfPosts.push(post);
+postFilling.push(post);
 
 hashTag = ["#Love"];
 like = ["Grey Warden","Leliana"];
@@ -201,7 +201,7 @@ post = {
 
 };
 
-fillingOfPosts.push(post);
+postFilling.push(post);
 
 hashTag = ["#Creator"];
 like = [];
@@ -224,7 +224,7 @@ post = {
 
 };
 
-fillingOfPosts.push(post);
+postFilling.push(post);
 
 hashTag = ["#Friends"];
 like = ["Grey Warden"];
@@ -247,30 +247,15 @@ post = {
 
 };
 
-fillingOfPosts.push(post);
+postFilling.push(post);
 
-for (let i = 12; i <= 20; i++) {
-	
-	let hashTag = ['#Reapers'];
-	let like = ['Government'];
-	let post = {
-
-	id: i.toString(),
-
-	description: 'Look from which reaper I have saved the Earth this time.',
-
-	createdAt: new Date(),
-
-	author: 'David Shepard',
-
-	photoLink: 'https://cdn.wallpapersafari.com/81/6/gZRdG2.jpg',
-   
-	hashTags: hashTag,
-   
-	likes: like,
-
-	};
-
-	fillingOfPosts.push(post);
+if(localStorage.getItem("postFilling") == null){
+	localStorage.setItem("postFilling", JSON.stringify(postFilling));
 }
 
+if(localStorage.getItem("newId") == null){
+	localStorage.setItem("newId", JSON.stringify(12));
+}
+
+/*localStorage.setItem("newId", JSON.stringify(12));
+localStorage.setItem("postFilling", JSON.stringify(postFilling));*/

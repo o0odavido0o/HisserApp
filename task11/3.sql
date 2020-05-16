@@ -1,0 +1,1 @@
+select * from hisserapp_database.posts where description like '%hello%' and user_id = 7;

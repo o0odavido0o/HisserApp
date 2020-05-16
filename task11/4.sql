@@ -1,0 +1,1 @@
+SELECT DISTINCT name FROM hisserapp_database.users;
